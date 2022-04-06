@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport content=width=device-width, initial-scale=1.0')
+            //- Interpolation Pug
+            title= `Natours | ${tour ? tour.name : 'Overview'} Tour`
+            link(rel='stylesheet', href='/css/style.css')
+            link(rel='shortcut icon' type='image/png', href='img/favicon.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+
+    body
+        ////Visible in rendered html h1 The Park Camper
+        ////- Not visible comment
+        ////- Buffer Code
+        //h1= tour
+        ////- We can use JS
+        //h2= user.toUpperCase()
+        //
+        ////- Un buffer code
+        //- const x = 10;
+        ////- Buffer Code Code that will add something to the output,
+        //h2= 2 * x
+        //
+        //p This is just some text
+
+
+        // HEADER
+        include _header
+
+        //Content
+        block content
+
+        //Footer
+        include _footer
+
+        script(defer src='/js/bundled/index.js')
+
+
+
+
+
+
+
+
+
+
+
+

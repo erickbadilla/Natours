@@ -1,0 +1,6 @@
+node_modules/
+*.env
+.parcel-cache/
+.idea/
+dist/
+.cache
