@@ -42,7 +42,7 @@ app.use(
           'https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js',
           'https://js.stripe.com/v3',
           'http://127.0.0.1:8080/',
-          `https://e-natours-app.herokuapp.com/:${process.env.PORT}/*`,
+          `https://e-natours-app.herokuapp.com/*`,
           'ws://127.0.0.1:*/',
           'ws://e-natours-app.herokuapp.com:*/',
           'https://api.stripe.com',
