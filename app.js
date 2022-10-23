@@ -38,6 +38,7 @@ app.use(
       directives: {
         'child-src': ['blob:', 'frame:'],
         'connect-src': [
+          "'self'",
           'https://*.mapbox.com',
           'https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js',
           'https://js.stripe.com/v3',
