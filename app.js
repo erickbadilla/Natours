@@ -34,15 +34,17 @@ app.use(cors({ origin: true, credentials: true }));
 //Options helps CDNs and API cors, CDPs errors
 app.use(
   helmet({
-    crossOriginEmbedderPolicy: false,
     contentSecurityPolicy: {
       directives: {
         'child-src': ['blob:', 'frame:'],
         'connect-src': [
           'https://*.mapbox.com',
           'https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js',
+          'https://js.stripe.com/v3',
           'http://127.0.0.1:8080/',
+          `https://e-natours-app.herokuapp.com/:${process.env.PORT}/`,
           'ws://127.0.0.1:*/',
+          'ws://e-natours-app.herokuapp.com:*/',
           'https://api.stripe.com',
         ],
         'default-src': ["'self'", 'ws:'],
@@ -53,11 +55,14 @@ app.use(
           'https://*.mapbox.com',
           'https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js',
           'https://js.stripe.com',
+          'https://js.stripe.com/*',
         ],
         'frame-src': ['https://js.stripe.com', 'https://hooks.stripe.com'],
         'worker-src': ['blob:'],
       },
     },
+    crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: false,
   })
 );
 
