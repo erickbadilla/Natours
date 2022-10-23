@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios';
 import { showAlert } from './alerts';
 import { serverAPIRouteV1 } from './serverConfig';
