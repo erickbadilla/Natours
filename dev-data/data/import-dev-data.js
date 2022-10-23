@@ -1,13 +1,12 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: '../../config.env' });
 
-const DB =
-  'mongodb+srv://erick:<PASSWORD>@cluster0.tcyct.mongodb.net/natours'.replace(
-    '<PASSWORD>',
-    '46ZHZpdiztkQHkFX'
-  );
+const DB = process.env.DATABASE.replace(
+  '<password>',
+  process.env.DATABASE_PASSWORD
+);
 
 const fs = require('fs');
 const Tour = require('../../models/tour.model');
@@ -101,9 +100,7 @@ switch (process.argv[2]) {
     break;
 
   default: {
+    console.log('No parameters');
     createIndex().then(exitConsole);
-
-    // console.log('No parameters');
-    // exitConsole();
   }
 }

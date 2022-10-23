@@ -20,6 +20,11 @@ router.get(
   viewController.getLoginFormViewHandler
 );
 router.get(
+  '/signup',
+  authController.isUserLoggedIn,
+  viewController.getSignUpHandler
+);
+router.get(
   '/me',
   authController.protectRouteHandler,
   viewController.getAccountHandler

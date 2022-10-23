@@ -13,7 +13,7 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 
 const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
+  '<password>',
   process.env.DATABASE_PASSWORD
 );
 
@@ -34,12 +34,5 @@ process.on('unhandledRejection', ({ name, message }) => {
   console.log('UNHANDLED REJECTION!', 'Shutting down...');
   console.log(name, message);
 
-  server.close(() => process.exit(1));
-});
-
-//Handler of synchronous errors
-process.on('uncaughtException', ({ name, message }) => {
-  console.log('UNCAUGHT EXCEPTION!', 'Shutting down...');
-  console.log(name, message);
   server.close(() => process.exit(1));
 });

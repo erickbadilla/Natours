@@ -46,6 +46,12 @@ exports.getAccountHandler = (req, res) => {
   });
 };
 
+exports.getSignUpHandler = (req, res) => {
+  res.status(200).render('signup', {
+    title: 'Sign Up',
+  });
+};
+
 exports.updateUserDataHandler = catchAsync(async (req, res, next) => {
   const { email, name } = req.body;
 
